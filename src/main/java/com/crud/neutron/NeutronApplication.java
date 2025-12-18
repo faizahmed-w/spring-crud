@@ -8,7 +8,7 @@ public class NeutronApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(NeutronApplication.class, args);
-        //System.out.println("OK");
+        System.out.println("OK");
     }
 
 }
