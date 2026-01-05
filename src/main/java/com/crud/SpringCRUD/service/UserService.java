@@ -1,11 +1,10 @@
-package com.crud.neutron.service;
+package com.crud.SpringCRUD.service;
 
-import com.crud.neutron.ENUM.Status;
-import com.crud.neutron.dto.UserRequestDTO;
-import com.crud.neutron.dto.UserResponseDTO;
-import com.crud.neutron.entity.User;
-import com.crud.neutron.mapper.UserMapper;
-import com.crud.neutron.repository.UserRepository;
+import com.crud.SpringCRUD.dto.UserRequestDTO;
+import com.crud.SpringCRUD.dto.UserResponseDTO;
+import com.crud.SpringCRUD.entity.User;
+import com.crud.SpringCRUD.mapper.UserMapper;
+import com.crud.SpringCRUD.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

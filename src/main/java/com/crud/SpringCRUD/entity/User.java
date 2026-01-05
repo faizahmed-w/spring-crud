@@ -1,6 +1,6 @@
-package com.crud.neutron.entity;
+package com.crud.SpringCRUD.entity;
 
-import com.crud.neutron.ENUM.Status;
+import com.crud.SpringCRUD.ENUM.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

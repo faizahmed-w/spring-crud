@@ -1,10 +1,10 @@
-package com.crud.neutron.mapper;
+package com.crud.SpringCRUD.mapper;
 
 
-import com.crud.neutron.ENUM.Status;
-import com.crud.neutron.dto.UserRequestDTO;
-import com.crud.neutron.dto.UserResponseDTO;
-import com.crud.neutron.entity.User;
+import com.crud.SpringCRUD.ENUM.Status;
+import com.crud.SpringCRUD.dto.UserRequestDTO;
+import com.crud.SpringCRUD.dto.UserResponseDTO;
+import com.crud.SpringCRUD.entity.User;
 
 import java.time.LocalDateTime;
 

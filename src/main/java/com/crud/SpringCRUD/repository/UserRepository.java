@@ -1,6 +1,6 @@
-package com.crud.neutron.repository;
+package com.crud.SpringCRUD.repository;
 
-import com.crud.neutron.entity.User;
+import com.crud.SpringCRUD.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

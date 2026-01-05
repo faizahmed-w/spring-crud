@@ -1,9 +1,8 @@
-package com.crud.neutron.dto;
+package com.crud.SpringCRUD.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class UserRequestDTO {

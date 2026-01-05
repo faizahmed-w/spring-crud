@@ -1,10 +1,10 @@
-package com.crud.neutron;
+package com.crud.SpringCRUD;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NeutronApplicationTests {
+class SpringCRUDApplicationTests {
 
 	@Test
 	void contextLoads() {

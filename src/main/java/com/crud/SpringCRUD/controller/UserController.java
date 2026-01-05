@@ -1,16 +1,16 @@
-package com.crud.neutron.controller;
+package com.crud.SpringCRUD.controller;
 
-import com.crud.neutron.dto.UserRequestDTO;
-import com.crud.neutron.dto.UserResponseDTO;
-import com.crud.neutron.entity.User;
-import com.crud.neutron.service.UserService;
+import com.crud.SpringCRUD.dto.UserRequestDTO;
+import com.crud.SpringCRUD.dto.UserResponseDTO;
+import com.crud.SpringCRUD.entity.User;
+import com.crud.SpringCRUD.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("user")
 public class UserController {
 
-    UserService userService;
+    final UserService userService;
 
     UserController(UserService userService) {
         this.userService = userService;

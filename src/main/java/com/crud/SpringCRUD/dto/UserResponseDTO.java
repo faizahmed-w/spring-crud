@@ -1,9 +1,5 @@
-package com.crud.neutron.dto;
+package com.crud.SpringCRUD.dto;
 
-import com.crud.neutron.ENUM.Status;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
