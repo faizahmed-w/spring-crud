@@ -27,3 +27,4 @@ public class UserRequestDTO {
 
 // Fields will be by default private, final
 // Record will provide Getter
+// By default All-Args Constructor will be provided - it will work as setter

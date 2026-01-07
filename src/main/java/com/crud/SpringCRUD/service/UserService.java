@@ -8,6 +8,8 @@ import com.crud.SpringCRUD.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -32,33 +34,40 @@ public class UserService {
         return UserMapper.userEntityToUserResponseDto(user);
     }
 
-    public User getUserById(Long userId) {
+    public User getUserEntity(Long userId) {
         return userRepository.findById(userId).orElseThrow(
                 () -> new RuntimeException("User not found with ID : " + userId));
     }
 
-    public User updateUserById(Long userId, User newUser) {
-        User existingUser = getUserById(userId);
-        if (newUser.getUsername() != null) {
-            existingUser.setUsername(newUser.getUsername());
-        }
-        if (newUser.getPassword() != null) {
-            existingUser.setPassword(newUser.getPassword());
-        }
-        if (newUser.getAge() != null) {
-            existingUser.setAge(newUser.getAge());
-        }
-        if (newUser.getAddress() != null) {
-            existingUser.setAddress(newUser.getAddress());
-        }
-        existingUser.setUpdatedAt(LocalDateTime.now());
-        return userRepository.save(existingUser);
+    public UserResponseDTO getUserById(Long userId) {
+        User user = getUserEntity(userId);
+        return UserMapper.userEntityToUserResponseDto(user);
     }
 
-    public User deleteUserById(Long userId) {
-        User user = getUserById(userId);
-        userRepository.deleteById(userId);
-        return user;
+    public UserResponseDTO updateUserById(Long userId, UserRequestDTO newUserRequestDTO) {
+        User existingUser = getUserEntity(userId);
+        UserMapper.updateUser(newUserRequestDTO, existingUser);
+        User saved = userRepository.save(existingUser);
+        return UserMapper.userEntityToUserResponseDto(saved);
     }
+
+    public UserResponseDTO deleteUserById(Long userId) {
+        User existingUser = getUserEntity(userId);
+        UserResponseDTO userResponseDTO = UserMapper.userEntityToUserResponseDto(existingUser);
+        userRepository.deleteById(userId);
+        return userResponseDTO;
+    }
+
+    public List<UserResponseDTO> getAllUser() {
+        List<UserResponseDTO> userResponseDTOList = new ArrayList<>();
+        List<User> userList = userRepository.findAll();
+        for(User user : userList){
+            UserResponseDTO userResponseDTO = UserMapper.userEntityToUserResponseDto(user);
+            userResponseDTOList.add(userResponseDTO);
+        }
+        return userResponseDTOList;
+    }
+
+
 
 }

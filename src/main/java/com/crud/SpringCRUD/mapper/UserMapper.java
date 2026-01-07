@@ -22,6 +22,30 @@ public class UserMapper {
     }
 
     public static UserResponseDTO userEntityToUserResponseDto(User user){
-        return null;
+        UserResponseDTO userResponseDTO = new UserResponseDTO(user.getUserId(),
+                user.getUsername(),
+                user.getAge(),
+                user.getAddress(),
+                user.getCreatedAt(),
+                user.getUpdatedAt());
+        return userResponseDTO;
     }
+
+    public static void updateUser(UserRequestDTO newUserRequestDTO, User existingUser) {
+        if (newUserRequestDTO.getUsername() != null) {
+            existingUser.setUsername(newUserRequestDTO.getUsername());
+        }
+        if (newUserRequestDTO.getPassword() != null) {
+            existingUser.setPassword(newUserRequestDTO.getPassword());
+        }
+        if (newUserRequestDTO.getAge() != null) {
+            existingUser.setAge(newUserRequestDTO.getAge());
+        }
+        if (newUserRequestDTO.getAddress() != null) {
+            existingUser.setAddress(newUserRequestDTO.getAddress());
+        }
+    }
+
+
+
 }

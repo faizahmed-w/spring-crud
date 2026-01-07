@@ -6,6 +6,8 @@ import com.crud.SpringCRUD.entity.User;
 import com.crud.SpringCRUD.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -22,17 +24,25 @@ public class UserController {
     }
 
     @GetMapping("get/{userId}")
-    public User get(@PathVariable Long userId) {
+    public UserResponseDTO get(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
 
+    @GetMapping("get")
+    public List<UserResponseDTO> getAll(){
+        return userService.getAllUser();
+    }
+
     @PutMapping("update/{userId}")
-    public User update(@PathVariable Long userId, @RequestBody User user) {
-        return userService.updateUserById(userId, user);
+    public UserResponseDTO update(@PathVariable Long userId, @RequestBody UserRequestDTO newUserRequestDTO) {
+        return userService.updateUserById(userId, newUserRequestDTO);
     }
 
     @DeleteMapping("delete/{userId}")
-    public User delete(@PathVariable Long userId) {
+    public UserResponseDTO delete(@PathVariable Long userId) {
         return userService.deleteUserById(userId);
     }
+
+
+
 }
